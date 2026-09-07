@@ -1,0 +1,11 @@
+{
+  "name": "contact-form",
+  "version": "1.0.0",
+  "description": "Lambda: handles POST /contact — stores volunteer/contact submissions in DynamoDB and emails a copy via SES.",
+  "main": "index.js",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.600.0",
+    "@aws-sdk/lib-dynamodb": "^3.600.0",
+    "@aws-sdk/client-ses": "^3.600.0"
+  }
+}

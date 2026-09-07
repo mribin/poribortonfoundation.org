@@ -1,0 +1,9 @@
+{
+  "name": "create-checkout-session",
+  "version": "1.0.0",
+  "description": "Lambda: handles POST /create-checkout-session — creates a Stripe Checkout Session (test mode) and returns its hosted URL.",
+  "main": "index.js",
+  "dependencies": {
+    "stripe": "^15.0.0"
+  }
+}

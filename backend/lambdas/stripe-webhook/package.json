@@ -1,0 +1,11 @@
+{
+  "name": "stripe-webhook",
+  "version": "1.0.0",
+  "description": "Lambda: handles POST /stripe-webhook — verifies Stripe's signed event and records completed donations in DynamoDB.",
+  "main": "index.js",
+  "dependencies": {
+    "stripe": "^15.0.0",
+    "@aws-sdk/client-dynamodb": "^3.600.0",
+    "@aws-sdk/lib-dynamodb": "^3.600.0"
+  }
+}

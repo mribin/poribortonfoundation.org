@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — Poriborton Foundation</title>
+<meta name="description" content="Get in touch with Poriborton Foundation, or sign up to volunteer. Email, phone, and office address for our Dhaka office.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="index.html" class="wordmark">
+      Poriborton <span>Foundation</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="primaryNav" class="primary-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+      <a href="donate.html" class="btn btn-primary btn-small">Donate</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow eyebrow-light">GET IN TOUCH</p>
+      <h1 class="page-hero-title">Have questions or want to volunteer?</h1>
+      <p class="page-hero-sub">We'd love to hear from you. Fill out the form below and we'll respond within 24 hours.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap donate-layout">
+
+      <form class="donate-panel reveal" id="contactForm">
+        <h2 class="section-title" style="margin-bottom:24px;">Volunteer with us</h2>
+
+        <label for="contactName">Full Name <span aria-hidden="true">*</span></label>
+        <input type="text" id="contactName" name="name" required autocomplete="name">
+
+        <label for="contactEmail">Email Address <span aria-hidden="true">*</span></label>
+        <input type="email" id="contactEmail" name="email" required autocomplete="email">
+
+        <label for="contactPhone">Phone Number <span aria-hidden="true">*</span></label>
+        <input type="tel" id="contactPhone" name="phone" required autocomplete="tel">
+
+        <label for="contactInterest">Area of Interest <span aria-hidden="true">*</span></label>
+        <select id="contactInterest" name="areaOfInterest" required>
+          <option value="">Select an area</option>
+          <option value="education">Education</option>
+          <option value="healthcare">Healthcare</option>
+          <option value="disaster-relief">Disaster Relief</option>
+          <option value="community-empowerment">Community Empowerment</option>
+          <option value="general-volunteering">General Volunteering</option>
+          <option value="donation-inquiry">Donation Inquiry</option>
+        </select>
+
+        <label for="contactMessage">Message <span aria-hidden="true">*</span></label>
+        <textarea id="contactMessage" name="message" rows="5" required></textarea>
+
+        <button type="submit" class="btn btn-primary" id="contactSubmit">Send Message</button>
+        <p class="form-status" id="contactStatus" role="status" aria-live="polite"></p>
+      </form>
+
+      <aside class="donate-trust reveal">
+        <h3>Contact information</h3>
+        <dl class="bank-dl">
+          <div><dt>Email</dt><dd><a href="mailto:info@poribortonfoundation.org">info@poribortonfoundation.org</a></dd></div>
+          <div><dt>Phone</dt><dd><a href="tel:+8801325066398">+880 1325-066398</a><br><a href="tel:+8801325066399">+880 1325-066399</a></dd></div>
+          <div><dt>Address</dt><dd>House #123, Road #45<br>Dhanmondi, Dhaka 1209<br>Bangladesh</dd></div>
+          <div><dt>Office Hours</dt><dd>Saturday – Thursday: 9:00 AM – 5:00 PM<br>Friday: Closed</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section cta-band">
+    <div class="wrap cta-inner">
+      <h2 class="section-title section-title-light">Join us in making a difference</h2>
+      <a href="donate.html" class="btn btn-primary">Donate Now</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="wordmark footer-wordmark">Poriborton <span>Foundation</span></p>
+      <p class="footer-reg">Registered NGO, Bangladesh — Reg. No. S-14289/2025</p>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="about.html">About</a>
+        <a href="programs.html">Programs</a>
+        <a href="donate.html">Donate</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <div class="footer-contact">
+      <p><a href="mailto:info@poribortonfoundation.org">info@poribortonfoundation.org</a></p>
+      <p><a href="tel:+8801325066398">+880 1325-066398</a></p>
+      <p>House #123, Road #45, Dhanmondi, Dhaka 1209, Bangladesh</p>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>&copy; <span id="year"></span> Poriborton Foundation. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/script.js"></script>
+<script src="js/contact.js"></script>
+</body>
+</html>

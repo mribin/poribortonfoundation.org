@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate — Poriborton Foundation</title>
+<meta name="description" content="Donate to Poriborton Foundation by card (Stripe, test mode) or via bank transfer / Bkash / Nagad mobile banking.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="index.html" class="wordmark">
+      Poriborton <span>Foundation</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="primaryNav" class="primary-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="donate.html" class="btn btn-primary btn-small" aria-current="page">Donate</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow eyebrow-light">GIVE</p>
+      <h1 class="page-hero-title">Every contribution creates meaningful change</h1>
+      <p class="page-hero-sub">Give by card, or use bank transfer / mobile banking below — whichever works best for you. Card payments run through Stripe in <strong>test mode</strong> while we finish setting up our real payment gateway.</p>
+    </div>
+  </section>
+
+  <!-- ============ CARD DONATE FORM ============ -->
+  <section class="section">
+    <div class="wrap donate-layout">
+      <form class="donate-panel reveal" id="donateForm">
+        <h2 class="section-title" style="margin-bottom:24px;">Give by card</h2>
+
+        <label for="donateFund">Donation Fund <span aria-hidden="true">*</span></label>
+        <select id="donateFund" name="fund" required>
+          <option value="">Select a fund</option>
+          <option value="general">General Fund</option>
+          <option value="education">Education</option>
+          <option value="healthcare">Healthcare</option>
+          <option value="mosque-building">Mosque Building</option>
+          <option value="zakat">Zakat Distribution</option>
+          <option value="qurbani">Qurbani</option>
+          <option value="skill-development">Skill Development</option>
+          <option value="disaster-relief">Disaster Relief</option>
+        </select>
+
+        <fieldset class="amount-fieldset">
+          <legend>Donation Amount (BDT) <span aria-hidden="true">*</span></legend>
+          <div class="amount-options" id="amountOptions" role="group" aria-label="Preset amounts">
+            <button type="button" class="amount-btn" data-amount="500">৳500</button>
+            <button type="button" class="amount-btn" data-amount="1000">৳1,000</button>
+            <button type="button" class="amount-btn" data-amount="2500">৳2,500</button>
+            <button type="button" class="amount-btn" data-amount="5000">৳5,000</button>
+          </div>
+          <label for="donateAmount" class="visually-hidden">Custom amount</label>
+          <input type="number" id="donateAmount" name="amount" min="50" step="1" placeholder="Or enter a custom amount" required>
+        </fieldset>
+
+        <label for="donateEmail">Email (for your receipt)</label>
+        <input type="email" id="donateEmail" name="email" placeholder="you@example.com">
+
+        <button type="submit" class="btn btn-primary" id="donateSubmit">Donate Now</button>
+        <p class="form-status" id="donateStatus" role="status" aria-live="polite"></p>
+        <p class="form-note">You will receive a tax-deduction receipt by email. Card payments are processed via Stripe Checkout — currently in test mode.</p>
+      </form>
+
+      <aside class="donate-trust reveal">
+        <h3>Secure &amp; transparent</h3>
+        <ul class="trust-list">
+          <li>100% Verified</li>
+          <li>Tax deductible</li>
+          <li>Receipt provided</li>
+        </ul>
+        <p>All bank accounts are officially registered under Poriborton Foundation. Your contributions are secure and fully traceable.</p>
+        <a class="card-link" href="contact.html">Need help with a bank transfer? Contact us →</a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ BANK DETAILS ============ -->
+  <section class="section work">
+    <div class="wrap">
+      <p class="eyebrow">SECURE BANKING CHANNELS</p>
+      <h2 class="section-title">Our bank details</h2>
+      <p style="max-width:60ch; margin-bottom:32px;">Multiple trusted banking options for your secure donations.</p>
+
+      <div class="card-grid bank-grid">
+        <article class="card reveal bank-card">
+          <span class="bank-badge">VERIFIED · ZAKAT DONATIONS</span>
+          <h3>Islami Bank Bangladesh PLC</h3>
+          <p class="bank-branch">Banglamotor, Dhaka</p>
+          <dl class="bank-dl">
+            <div><dt>Account Name</dt><dd>Poriborton Foundation</dd></div>
+            <div><dt>Account Number</dt><dd>20504300900005815</dd></div>
+            <div><dt>Account Type</dt><dd>Cash &amp; Cheque Deposit</dd></div>
+            <div><dt>Routing Number</dt><dd>12570852</dd></div>
+            <div><dt>Currency</dt><dd>BDT (Bangladeshi Taka)</dd></div>
+          </dl>
+        </article>
+
+        <article class="card reveal bank-card">
+          <span class="bank-badge">VERIFIED · GENERAL DONATIONS</span>
+          <h3>Bank Asia Ltd.</h3>
+          <p class="bank-branch">Shahbagh, Dhaka</p>
+          <dl class="bank-dl">
+            <div><dt>Account Name</dt><dd>Poriborton Foundation</dd></div>
+            <div><dt>Account Number</dt><dd>50313000532</dd></div>
+            <div><dt>Account Type</dt><dd>Mudaraba Special Notice Deposit (S03)</dd></div>
+            <div><dt>Routing Number</dt><dd>070270202</dd></div>
+            <div><dt>Currency</dt><dd>BDT (Bangladeshi Taka)</dd></div>
+          </dl>
+        </article>
+
+        <article class="card reveal bank-card">
+          <span class="bank-badge">VERIFIED · GENERAL DONATIONS</span>
+          <h3>AB Bank PLC</h3>
+          <p class="bank-branch">Islami Banking Branch, Kakrail (Dhaka)</p>
+          <dl class="bank-dl">
+            <div><dt>Account Name</dt><dd>Poriborton Foundation</dd></div>
+            <div><dt>Account Number</dt><dd>1361121163420</dd></div>
+            <div><dt>Account Type</dt><dd>Cash &amp; Cheque Deposit</dd></div>
+            <div><dt>Routing Number</dt><dd>020272926</dd></div>
+            <div><dt>Currency</dt><dd>BDT (Bangladeshi Taka)</dd></div>
+          </dl>
+        </article>
+      </div>
+      <p class="form-note" style="margin-top:24px;">Need help with a bank transfer? <a href="contact.html">Contact us</a> for assistance.</p>
+    </div>
+  </section>
+
+  <!-- ============ MOBILE BANKING ============ -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">MOBILE BANKING</p>
+      <h2 class="section-title">Mobile payment numbers</h2>
+      <p style="max-width:60ch; margin-bottom:32px;">Send your donation instantly via Bkash or Nagad.</p>
+
+      <div class="card-grid">
+        <article class="card reveal">
+          <span class="bank-badge">ZAKAT ONLY</span>
+          <h3>Zakat Donations</h3>
+          <p>Dedicated number for Zakat contributions.</p>
+          <dl class="bank-dl">
+            <div><dt>Bkash</dt><dd>01325066381</dd></div>
+            <div><dt>Nagad</dt><dd>01325066381</dd></div>
+          </dl>
+          <p class="form-note">This number is exclusively for Zakat donations.</p>
+        </article>
+
+        <article class="card reveal">
+          <span class="bank-badge">ALL OTHER DONATIONS</span>
+          <h3>Other Donations</h3>
+          <p>For general and program-specific donations.</p>
+          <dl class="bank-dl">
+            <div><dt>Bkash</dt><dd>01325066383</dd></div>
+            <div><dt>Nagad</dt><dd>01325066383</dd></div>
+          </dl>
+          <p class="form-note">For all programs except Zakat.</p>
+        </article>
+      </div>
+
+      <ol class="how-to-list">
+        <li>Open your Bkash or Nagad app and select "Send Money."</li>
+        <li>Enter the appropriate number based on your donation type.</li>
+        <li>Enter your donation amount and complete the transaction.</li>
+        <li>Save your transaction ID and <a href="contact.html">contact us</a> for a receipt.</li>
+      </ol>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="wordmark footer-wordmark">Poriborton <span>Foundation</span></p>
+      <p class="footer-reg">Registered NGO, Bangladesh — Reg. No. S-14289/2025</p>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="about.html">About</a>
+        <a href="programs.html">Programs</a>
+        <a href="donate.html">Donate</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <div class="footer-contact">
+      <p><a href="mailto:info@poribortonfoundation.org">info@poribortonfoundation.org</a></p>
+      <p><a href="tel:+8801325066398">+880 1325-066398</a></p>
+      <p>House #123, Road #45, Dhanmondi, Dhaka 1209, Bangladesh</p>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>&copy; <span id="year"></span> Poriborton Foundation. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/script.js"></script>
+<script src="js/donate.js"></script>
+</body>
+</html>
