@@ -45,7 +45,7 @@ const FUND_LABELS = {
   qurbani: 'Qurbani',
   'skill-development': 'Skill Development',
   'disaster-relief': 'Disaster Relief',
-  'clean-water': 'Clean Water',
+  'clean-water': 'Drinking Water',
 };
 
 const CORS_HEADERS = {

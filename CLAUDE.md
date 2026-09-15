@@ -20,8 +20,8 @@ Bengali), a Bangladesh-based registered charity. Domain: poribortonfoundation.or
 - **Mission:** sustainable social change in Bangladesh through poverty
   alleviation, education, healthcare, and community empowerment.
 - **Programs (8):** Education, Healthcare, Mosque Building, Zakat
-  Distribution, Qurabani, Skill Development, Disaster Relief, Clean Water.
-  ⚠️ Clean Water was added 2026-09-15 at the owner's request — it is **not**
+  Distribution, Qurabani, Skill Development, Disaster Relief, Drinking Water.
+  ⚠️ Drinking Water was added 2026-09-15 at the owner's request — it is **not**
   in the real org content sourced from the live site on 2026-09-07. Copy for
   it (homepage card + Programs page detail block) is placeholder, drafted in
   the site's voice — verify real project details with the owner before this
