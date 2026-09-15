@@ -33,6 +33,7 @@ const VALID_FUNDS = new Set([
   'qurbani',
   'skill-development',
   'disaster-relief',
+  'clean-water',
 ]);
 
 const FUND_LABELS = {
@@ -44,6 +45,7 @@ const FUND_LABELS = {
   qurbani: 'Qurbani',
   'skill-development': 'Skill Development',
   'disaster-relief': 'Disaster Relief',
+  'clean-water': 'Clean Water',
 };
 
 const CORS_HEADERS = {

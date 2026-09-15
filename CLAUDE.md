@@ -19,8 +19,13 @@ Bengali), a Bangladesh-based registered charity. Domain: poribortonfoundation.or
 - **NGO Registration No.** S-14289/2025
 - **Mission:** sustainable social change in Bangladesh through poverty
   alleviation, education, healthcare, and community empowerment.
-- **Programs (7):** Education, Healthcare, Mosque Building, Zakat
-  Distribution, Qurabani, Skill Development, Disaster Relief.
+- **Programs (8):** Education, Healthcare, Mosque Building, Zakat
+  Distribution, Qurabani, Skill Development, Disaster Relief, Clean Water.
+  ⚠️ Clean Water was added 2026-09-15 at the owner's request — it is **not**
+  in the real org content sourced from the live site on 2026-09-07. Copy for
+  it (homepage card + Programs page detail block) is placeholder, drafted in
+  the site's voice — verify real project details with the owner before this
+  goes live for real donors, same as the other flagged items below.
 - **Impact stats:** 50,000+ beneficiaries, 200+ villages, 45 active projects,
   500+ volunteers.
 - **Contact:** info@poribortonfoundation.org · +880 1325-066398 / -066399 ·
@@ -91,7 +96,7 @@ building a separate flow per appeal. Revisit if the owner wants more parity
 with those reference sites later.
 
 - **Nav:** Home · About · Programs · Donate (highlighted CTA) · Gallery · Contact
-- **Home:** hero, trust badges, causes grid (all 7 programs), impact stats,
+- **Home:** hero, trust badges, causes grid (all 8 programs), impact stats,
   get-involved/newsletter, footer
 - **About:** mission/vision, team, timeline, NGO registration
 - **Programs:** full detail per program, each links into Donate with the

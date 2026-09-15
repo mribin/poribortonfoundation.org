@@ -120,6 +120,9 @@ ul { list-style: none; }
   padding-top: 18px; padding-bottom: 18px;
 }
 .wordmark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 1.3rem;
@@ -127,6 +130,12 @@ ul { list-style: none; }
   text-decoration: none;
 }
 .wordmark span { color: var(--rickshaw-red); }
+.wordmark-logo {
+  height: 40px;
+  width: 40px;
+  flex-shrink: 0;
+  display: block;
+}
 
 .primary-nav {
   display: flex; align-items: center; gap: 28px;
