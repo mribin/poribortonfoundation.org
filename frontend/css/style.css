@@ -130,6 +130,7 @@ ul { list-style: none; }
   text-decoration: none;
 }
 .wordmark span { color: var(--rickshaw-red); }
+.wordmark .wordmark-text { color: var(--indigo-deep); }
 .wordmark-logo {
   height: 40px;
   width: 40px;
@@ -150,10 +151,17 @@ ul { list-style: none; }
 
 .nav-toggle {
   display: none;
-  flex-direction: column; gap: 5px;
-  background: none; border: none; cursor: pointer; padding: 6px;
+  flex-direction: column; justify-content: center; align-items: center; gap: 5px;
+  background: none; border: none; cursor: pointer;
+  width: 44px; height: 44px; /* comfortable touch target */
 }
 .nav-toggle span { width: 22px; height: 2px; background: var(--indigo-deep); }
+
+/* Header wrapper for the mobile-only Donate + toggle (homepage) */
+.header-actions { display: none; align-items: center; gap: 8px; }
+
+/* Header sits on parchment: marigold outline is too faint there, use navy */
+.site-header :focus-visible { outline-color: var(--indigo-deep); }
 
 /* ============ Hero ============ */
 .hero {
@@ -163,23 +171,53 @@ ul { list-style: none; }
   padding: 100px 0 120px;
   overflow: hidden;
 }
-.hero-inner { max-width: 720px; }
-.hero .eyebrow { color: var(--marigold); }
+.hero-inner { display: block; }
+.hero-copy { max-width: 640px; }
+.hero .eyebrow {
+  color: var(--marigold);
+  padding-bottom: 12px;
+  /* subtle running-stitch rule under the eyebrow */
+  background: repeating-linear-gradient(to right, var(--marigold) 0 8px, transparent 8px 16px) left bottom / 96px 2px no-repeat;
+}
 .hero-headline {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-size: clamp(2rem, 5vw, 3.4rem);
   line-height: 1.12;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 .hero-sub {
   font-size: 1.08rem;
   color: #D9DEE8;
-  max-width: 56ch;
-  margin-bottom: 36px;
+  max-width: 46ch;
+  margin-bottom: 32px;
 }
 .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
 .hero .btn-outline { border-color: var(--parchment); color: var(--parchment); }
+.hero .btn-outline:hover { background: rgba(245, 239, 227, 0.12); }
+.btn-large { min-height: 48px; padding: 13px 32px; font-size: 1rem; }
+
+/* Photo slot: decorative placeholder until an approved field photo is supplied */
+.hero-media { display: none; }
+.hero-media-placeholder {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  border: 2px dashed var(--marigold);
+  background: repeating-linear-gradient(45deg, rgba(245,239,227,0.06) 0 12px, transparent 12px 24px);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.08em;
+  text-transform: uppercase; color: #D9DEE8;
+}
+.hero-media img { aspect-ratio: 4 / 3; width: 100%; object-fit: cover; border-radius: var(--radius); }
+
+@media (min-width: 900px) {
+  .hero-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }
+  .hero-media { display: block; }
+}
+@media (max-width: 480px) {
+  .hero { padding: 56px 0 64px; }
+  .hero-actions .btn { width: 100%; text-align: center; }
+}
 
 /* Signature stitch spine: running-stitch line that grows on scroll */
 .stitch-spine {
@@ -692,7 +730,14 @@ ul { list-style: none; }
 /* ============ Mobile nav ============ */
 @media (max-width: 820px) {
   .nav-toggle { display: flex; }
+  .header-actions { display: flex; }
+  .header-actions .nav-toggle { margin-right: -10px; }
+  .wordmark { font-size: 1.1rem; gap: 8px; }
+  .wordmark-logo { height: 34px; width: 34px; }
+  .header-actions ~ .primary-nav .btn-primary { display: none; } /* homepage: Donate lives in header-actions instead */
   .primary-nav {
+    visibility: hidden; /* keeps collapsed links out of the tab order */
+    transition: max-height 0.3s ease, visibility 0s linear 0.3s;
     position: absolute;
     top: 100%; left: 0; right: 0;
     background: var(--parchment);
@@ -702,9 +747,19 @@ ul { list-style: none; }
     border-bottom: 1px solid var(--parchment-2);
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
   }
-  .primary-nav.open { max-height: 320px; }
+  .primary-nav.open { max-height: 320px; visibility: visible; transition: max-height 0.3s ease; }
   .primary-nav a { width: 100%; padding: 14px 24px; border-top: 1px solid var(--parchment-2); }
   .primary-nav a.btn { margin: 14px 24px; width: calc(100% - 48px); text-align: center; }
+}
+
+/* Narrow phones (360px): stack the wordmark so Donate + menu toggle both fit */
+@media (max-width: 420px) {
+  .header-inner { gap: 8px; }
+  .wrap { padding-left: 16px; padding-right: 16px; }
+  .wordmark { font-size: 1rem; line-height: 1.1; min-width: 0; }
+  .wordmark-text span { display: block; }
+  .wordmark-logo { height: 32px; width: 32px; }
+  .primary-nav a { padding-left: 16px; padding-right: 16px; }
+  .primary-nav a.btn { margin-left: 16px; margin-right: 16px; width: calc(100% - 32px); }
 }

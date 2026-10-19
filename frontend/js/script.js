@@ -10,17 +10,40 @@ document.getElementById('year').textContent = new Date().getFullYear();
 const navToggle = document.getElementById('navToggle');
 const primaryNav = document.getElementById('primaryNav');
 
+// Keep the button's state, accessible name, and the menu's open class in sync
+function setNavOpen(isOpen) {
+  primaryNav.classList.toggle('open', isOpen);
+  navToggle.setAttribute('aria-expanded', String(isOpen));
+  navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+}
+
 navToggle.addEventListener('click', () => {
-  const isOpen = primaryNav.classList.toggle('open');
-  navToggle.setAttribute('aria-expanded', isOpen);
+  setNavOpen(!primaryNav.classList.contains('open'));
 });
 
 // Close mobile nav when a link is tapped
 primaryNav.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', () => {
-    primaryNav.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
-  });
+  link.addEventListener('click', () => setNavOpen(false));
+});
+
+// Escape closes the menu and returns focus to the toggle
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && primaryNav.classList.contains('open')) {
+    setNavOpen(false);
+    navToggle.focus();
+  }
+});
+
+// Tapping outside the header closes the menu
+document.addEventListener('click', (event) => {
+  if (primaryNav.classList.contains('open') && !event.target.closest('.site-header')) {
+    setNavOpen(false);
+  }
+});
+
+// Reset if the viewport grows to the desktop layout while the menu is open
+window.matchMedia('(min-width: 821px)').addEventListener('change', (e) => {
+  if (e.matches) setNavOpen(false);
 });
 
 // Respect reduced-motion preference for all scroll animations below

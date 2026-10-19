@@ -22,14 +22,18 @@
   <div class="wrap header-inner">
     <a href="index.html" class="wordmark">
       <img src="assets/logo.png" alt="" class="wordmark-logo">
-      Poriborton <span>Foundation</span>
+      <span class="wordmark-text">Poriborton <span>Foundation</span></span>
     </a>
 
-    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="header-actions">
+      <!-- Mobile-only Donate: stays visible without opening the menu -->
+      <a href="donate.html" class="btn btn-primary btn-small header-donate">Donate</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
 
-    <nav id="primaryNav" class="primary-nav">
+    <nav id="primaryNav" class="primary-nav" aria-label="Primary">
       <a href="index.html" aria-current="page">Home</a>
       <a href="about.html">About</a>
       <a href="programs.html">Programs</a>
@@ -45,18 +49,27 @@
   <!-- ============ HERO ============ -->
   <section class="hero" id="home">
     <div class="wrap hero-inner">
-      <p class="eyebrow">PORIBORTON — "CHANGE," IN BENGALI</p>
-      <h1 class="hero-headline">Change doesn't arrive.<br>It's stitched, together.</h1>
-      <p class="hero-sub">
-        Poriborton Foundation works alongside communities across Bangladesh —
-        through education, healthcare, Zakat &amp; Qurbani distribution, mosque
-        building, skill development, and emergency relief — the same way a
-        Nakshi Kantha quilt comes together: many hands, one running thread.
-      </p>
-      <div class="hero-actions">
-        <a href="donate.html" class="btn btn-primary">Donate</a>
-        <a href="programs.html" class="btn btn-outline">See our work</a>
+      <div class="hero-copy">
+        <p class="eyebrow">PORIBORTON — "CHANGE," IN BENGALI</p>
+        <h1 class="hero-headline">Lasting change for communities across Bangladesh.</h1>
+        <p class="hero-sub">
+          We work in education, healthcare, and community support to help
+          families lift themselves out of poverty.
+        </p>
+        <div class="hero-actions">
+          <a href="donate.html" class="btn btn-primary btn-large">Donate</a>
+          <a href="programs.html" class="btn btn-outline btn-large">See our work</a>
+        </div>
       </div>
+
+      <!-- CONTENT REQUIREMENT: approved field photograph not yet supplied.
+           Decorative placeholder only. To swap in the real photo, replace the
+           inner div with:
+           <img src="assets/hero.jpg" alt="[describe the real photo]" width="1600" height="1200" fetchpriority="high">
+           and keep it inside this figure. See docs/content-requirements.md. -->
+      <figure class="hero-media" aria-hidden="true">
+        <div class="hero-media-placeholder"><span>Field photo to come</span></div>
+      </figure>
     </div>
     <div class="stitch-spine" aria-hidden="true"><div class="stitch-fill" id="stitchFill"></div></div>
   </section>
