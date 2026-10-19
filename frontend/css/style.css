@@ -198,7 +198,7 @@ ul { list-style: none; }
 .btn-large { min-height: 48px; padding: 13px 32px; font-size: 1rem; }
 
 /* Photo slot: decorative placeholder until an approved field photo is supplied */
-.hero-media { display: none; }
+.hero-media { display: block; max-width: 360px; margin-top: 32px; }
 .hero-media-placeholder {
   aspect-ratio: 4 / 3;
   border-radius: var(--radius);
@@ -208,11 +208,11 @@ ul { list-style: none; }
   font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.08em;
   text-transform: uppercase; color: #D9DEE8;
 }
-.hero-media img { aspect-ratio: 4 / 3; width: 100%; object-fit: cover; border-radius: var(--radius); }
+.hero-media img { aspect-ratio: 1 / 1; width: 100%; height: auto; object-fit: cover; border-radius: var(--radius); }
 
 @media (min-width: 900px) {
   .hero-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }
-  .hero-media { display: block; }
+  .hero-media { max-width: none; margin-top: 0; }
 }
 @media (max-width: 480px) {
   .hero { padding: 56px 0 64px; }
