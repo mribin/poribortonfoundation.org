@@ -73,17 +73,30 @@ just have code appear.
 - [x] Phase 3 — Full rebuild: multi-page site (home/about/programs/donate/
       gallery/contact), real org content, Lambda source written — **frontend
       done, Lambdas written but not deployed** (2026-09-07)
-- [ ] AWS deployment (Amplify Hosting, API Gateway, Lambda, DynamoDB, SES) —
-      not yet done, site only runs locally. Needs explicit go-ahead before
-      creating real AWS resources.
+- [ ] Phase 4 — Programs & Projects on local JSON (program.html, project.html,
+      news sidebar), beta on GitHub Pages. No AWS. ← NEXT
+- [ ] Phase 5 — Data layer: DynamoDB (Content + Donations tables)
+- [ ] Phase 6 — Public read API: API Gateway + Lambda; flip API_BASE_URL
+- [ ] Phase 7 — Contact form & newsletter Lambdas deployed (SES)
+- [ ] Phase 8 — Donations: Stripe Checkout + webhook → live progress bars
+- [ ] Phase 9 — Staff login (Cognito)
+- [ ] Phase 10 — Admin tools: project/news CRUD, S3 pre-signed photo uploads
+- [ ] Phase 11 — Production hosting & DNS: Amplify Hosting, Route 53, ACM
+- [ ] Phase 12 — Launch: security, cost and accessibility review; go-live
+Needs explicit go-ahead before creating any real AWS resources.
 
 ## Tech stack (locked decisions — don't deviate without asking)
 
 - **Frontend:** Plain HTML/CSS/JS. No framework. Chosen deliberately to keep
   focus on AWS concepts rather than framework tooling.
 - **Backend:** Node.js Lambda functions.
-- **Hosting:** AWS Amplify Hosting (manages S3 + CloudFront + build pipeline
-  from this GitHub repo).
+- **Hosting:** GitHub Pages is the BETA host (.github/workflows/deploy-pages.yml).
+  AWS Amplify Hosting comes in Phase 11. Keep the site portable: no code may
+  depend on one host (relative paths only; one getProjectId() for URL parsing).
+- **Infrastructure as code:** AWS SAM templates in infrastructure/. Deploy
+  with `sam deploy`; tear down with `sam delete`. The first time a new AWS
+  service is used, the owner clicks through it once in the console to learn
+  it, then it is captured in SAM. No hand-made resources left outside SAM.
 - **DNS:** Route 53.
 - **Backend services:** API Gateway → Lambda → DynamoDB / SES.
 - **Payments:** Stripe Hosted Checkout, **Test Mode only** for now — Stripe
@@ -99,6 +112,9 @@ frontend/           Static site files (index.html, about.html, programs.html,
                      donate.html, gallery.html, contact.html, css/, js/)
 backend/lambdas/     One folder per Lambda function
 infrastructure/      Reserved for future IaC / config
+docs/plan/           Agreed plans and per-phase briefs (written in claude.ai
+                     planning chat). Build from these; don't redesign silently.
+frontend/data/       Local JSON that exactly matches the future API responses
 ```
 
 ## Site structure & donation scope (locked decisions, 2026-09-07)
@@ -123,6 +139,13 @@ with those reference sites later.
 - **Gallery:** placeholder image cards (no real photos supplied yet — see
   Content status below)
 - **Contact:** volunteer/contact form + real contact info
+
+## Programs → Projects feature (in planning, 2026-11)
+
+Supersedes the "one shared donate flow" decision above: donations can now go
+to a specific project (e.g. WAT01) or a program's general fund. Full plan:
+docs/plan/programs-projects.md (written once planning is agreed). Qurbani
+projects are parked for release 1 — the QRB page shows the general fund only.
 
 ## Content status
 
@@ -160,6 +183,9 @@ change direction.
   expected small costs; anything larger should be called out).
 - SES starts in sandbox mode — can only send to verified addresses until
   production access is requested.
-- IAM: the owner's day-to-day console user is `paribartan-admin`
-  (AdministratorAccess, for solo learning convenience) — this is separate
-  from per-Lambda scoped roles, which should stay minimal.
+- IAM: the owner works as Identity Center user `poriborton-admin` (MFA) with
+  permission set `PoribortonBuilder` — scoped, NOT AdministratorAccess. CLI
+  access is the SSO profile `poriborton-builder` only; never create or use
+  access keys. Claude Code runs aws/sam commands through that same profile,
+  and every aws/sam command needs the owner's approval before it runs.
+  Per-Lambda roles stay minimal and separate from this.
