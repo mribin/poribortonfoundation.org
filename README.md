@@ -1,2 +1,2 @@
 # poribortonfoundation.org
-Website for Poriborton Fondation
+Website for Poriborton Foundation
