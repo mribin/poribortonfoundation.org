@@ -52,7 +52,23 @@ just have code appear.
 
 - [x] Phase 0 — Requirements finalized
 - [x] Phase 1 — GitHub repo created, folder structure set up
-- [ ] Phase 1 — IAM user (`paribartan-admin`) + billing alerts — **not yet done**
+- [x] Phase 1 — AWS account foundation — **complete**:
+  - IAM Identity Center enabled in ap-southeast-2 (single-Region,
+    organization instance); group `poriborton-builders`; user
+    `poriborton-admin` with MFA; permission set `PoribortonBuilder` assigned
+    to the account and provisioned.
+  - AWS CLI v2 installed; SSO profile `poriborton-builder` tested.
+  - CloudTrail management-events trail `poriborton-mgmt-trail` logging to
+    Sydney, multi-Region.
+  - Billing alert budget `poriborton-monthly-cap`.
+  - MFA enabled on the `alamin` IAM user.
+  - **Region decision:** ap-southeast-2 (Sydney).
+  - **Tagging convention:** `Project=poriborton`, `Env=beta|prod`,
+    `Component=<name>`.
+  - **Naming convention:** `poriborton-<env>-<component>-<type>`.
+  - **Still open:** activate cost allocation tags `Project` and `Env` in
+    Billing once the first tagged resources exist (they only appear after
+    that).
 - [x] Phase 2 — Homepage built (static HTML/CSS/JS, not yet deployed to AWS)
 - [x] Phase 3 — Full rebuild: multi-page site (home/about/programs/donate/
       gallery/contact), real org content, Lambda source written — **frontend
